@@ -23,7 +23,7 @@ function mobile_content_node_view($node, $view_mode, $langcode) {
 }
 
 /*
-* Filter content for display on device
+* Filter content for display on device.
 * @author 
 * Danny Najm <danny@dannyn.com>
 */
@@ -70,4 +70,14 @@ function mobile_content_preprocess_html(&$vars) {
 			'name' => _mobile_content_filter_for_display($head_title_array['name']),
 		);
 	drupal_set_title($title);
+}
+
+/**
+* Implements hook_preprocess_page().
+* @author 
+* Danny Najm <danny@dannyn.com>
+*/
+function mobile_content_preprocess_page(&$vars) {
+	if (isset($vars['node']))
+		drupal_set_title($vars['node']->title);
 }
