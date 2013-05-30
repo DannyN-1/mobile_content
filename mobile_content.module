@@ -81,3 +81,18 @@ function mobile_content_preprocess_page(&$vars) {
 	if (isset($vars['node']))
 		drupal_set_title($vars['node']->title);
 }
+
+/**
+* Returns HTML for a breadcrumb trail.
+* @author 
+* Danny Najm <danny@dannyn.com>
+*/
+function mobile_content_menu_breadcrumb_alter(&$active_trail, $item) {
+	$a_trail = array();
+	foreach($active_trail as $trail) {
+		if (isset($trail['title']))
+			$trail['title'] = _mobile_content_filter_for_display($trail['title']);
+		array_push($a_trail, $trail);
+	}
+	$active_trail = $a_trail;
+}
