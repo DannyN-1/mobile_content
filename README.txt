@@ -1,5 +1,5 @@
-Moduled developed by Danny Najm <danny@dannyn.com>
-
+Moduled developed by Danny Najm <danny@DrupalCMSCoder.com>
+Website: http://www.DrupalCMSCoder.com
 
 DESCRIPTION
 -----------

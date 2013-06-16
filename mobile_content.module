@@ -5,8 +5,10 @@
 * content to be displayed on mobile devices. Tag format should be {mobile}...{/mobile}. 
 * Powerful module to display different content based on the browsing device.
 *
+* Module Support: http://www.DrupalCMSCoder.com
+*
 * @author 
-* Danny Najm <danny@dannyn.com>
+* Danny Najm <danny@DrupalCMSCoder.com>
 *
 */
 
@@ -15,7 +17,7 @@ require_once('mobile_detect.php');
 /*
 * Generates an array for rendering the given node.
 * @author 
-* Danny Najm <danny@dannyn.com>
+* Danny Najm <danny@DrupalCMSCoder.com>
 */
 function mobile_content_node_view($node, $view_mode, $langcode) {
 	$node->title = _mobile_content_filter_for_display($node->title);
@@ -25,7 +27,7 @@ function mobile_content_node_view($node, $view_mode, $langcode) {
 /*
 * Filter content for display on device.
 * @author 
-* Danny Najm <danny@dannyn.com>
+* Danny Najm <danny@DrupalCMSCoder.com>
 */
 function _mobile_content_filter_for_display($original_node) {
 	$pattern = "/\{mobile\}(.*)\{\/mobile\}/sU";
@@ -59,7 +61,7 @@ function mobile_content_theme() {
 /**
 * Implement hook_preprocess_html().
 * @author 
-* Danny Najm <danny@dannyn.com>
+* Danny Najm <danny@DrupalCMSCoder.com>
 */
 function mobile_content_preprocess_html(&$vars) {
 	$head_title_array = $vars['head_title_array'];
@@ -75,7 +77,7 @@ function mobile_content_preprocess_html(&$vars) {
 /**
 * Implements hook_preprocess_page().
 * @author 
-* Danny Najm <danny@dannyn.com>
+* Danny Najm <danny@DrupalCMSCoder.com>
 */
 function mobile_content_preprocess_page(&$vars) {
 	if (isset($vars['node']))
@@ -85,7 +87,7 @@ function mobile_content_preprocess_page(&$vars) {
 /**
 * Returns HTML for a breadcrumb trail.
 * @author 
-* Danny Najm <danny@dannyn.com>
+* Danny Najm <danny@DrupalCMSCoder.com>
 */
 function mobile_content_menu_breadcrumb_alter(&$active_trail, $item) {
 	$a_trail = array();
